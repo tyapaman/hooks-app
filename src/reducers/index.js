@@ -18,7 +18,9 @@ const events = (state=[], action) => {
       const length = state.length
       let id = length === 0 ? 1 : state[length - 1 ].id +1
       return [...state,{id, ...event}]
-    case 'DELETE':
+    case 'DELETE_EVENT':
+      //event は state　の一つ一つ {id:1, title:'titel', body:'body'}
+      return state.filter(event => event.id != action.id)
     case 'ALL_DELETE':
     default:
        throw new Error
