@@ -21,7 +21,8 @@ const events = (state=[], action) => {
     case 'DELETE_EVENT':
       //event は state　の一つ一つ {id:1, title:'titel', body:'body'}
       return state.filter(event => event.id != action.id)
-    case 'ALL_DELETE':
+    case 'DELETE_ALL_EVENTS':
+      return []
     default:
        throw new Error
   }
