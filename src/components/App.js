@@ -13,6 +13,7 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer,[])
 
   return (
+    //valueで渡せる　useContextで渡せる
     <AppContext.Provider value={'hello provider'}>
       <div className="contaienr-fluid">
       <EventForm state={state} dispatch={dispatch}/>
