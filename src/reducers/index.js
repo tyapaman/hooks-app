@@ -20,11 +20,11 @@ const events = (state=[], action) => {
       return [...state,{id, ...event}]
     case 'DELETE_EVENT':
       //event は state　の一つ一つ {id:1, title:'titel', body:'body'}
-      return state.filter(event => event.id != action.id)
+      return state.filter(event => event.id !== action.id)
     case 'DELETE_ALL_EVENTS':
       return []
     default:
-       throw new Error
+       throw new Error()
   }
 }
 
