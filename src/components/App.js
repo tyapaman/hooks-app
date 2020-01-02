@@ -14,10 +14,10 @@ const App = () => {
 
   return (
     //valueで渡せる　useContextで渡せる
-    <AppContext.Provider value={'hello provider'}>
+    <AppContext.Provider value={{state,dispatch}}>
       <div className="contaienr-fluid">
-      <EventForm state={state} dispatch={dispatch}/>
-      <Events state={state} dispatch={dispatch}/>
+      <EventForm />
+      <Events />
       </div>
     </AppContext.Provider>
   );

@@ -1,9 +1,11 @@
-import React from 'react'
+import React ,{ useContext }from 'react'
 import { DELETE_EVENT } from '../actions' 
+import  AppContext from '../contexts/AppContext'
 
 //event は state　の一つ一つ {id:1, title:'titel', body:'body'}
-const Event = ({dispatch, event}) =>{
+const Event = ({ event }) =>{
 const id = event.id
+const {dispatch } =useContext(AppContext) 
   const handleClickDeleteButton = () =>{
     const result = window.confirm(`ID = ${id}のイベントを削除しても良いですか?`)
     //dispatchを読んでreducerに削除した事を伝えたい action に詰める
