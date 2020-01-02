@@ -1,9 +1,13 @@
 import React from 'react'
 import Event from '../components/Event'
+import AppContext from '../contexts/AppContext'
 
 const Events = ({state, dispatch}) =>{
   return(
   <>
+    <AppContext.Consumer>
+      {value => <p>{value}</p>}
+    </AppContext.Consumer>
     <h4>イベント一覧</h4>
     <table className="table table-hover">
       <thead>
