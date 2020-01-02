@@ -10,8 +10,8 @@ import {
 //}
 
 //state = [
-//  {description: 'description', operatedAd:'2020-1-1'},
-//  {description: 'description', operatedAd:'2020-1-1'}
+//  {description: 'description', operatedAt:'2020-1-1'},
+//  {description: 'description', operatedAt:'2020-1-1'}
 //]
 
 const operationLogs = ( state = [], action) =>{
