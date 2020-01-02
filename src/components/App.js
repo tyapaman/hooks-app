@@ -5,12 +5,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AppContext from '../contexts/AppContext'
 
 import EventForm from './EventForm'
+import Events from './Events'
 import reducer from '../reducers'
-import Events from '../components/Events'
 
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer,[])
+  const initialState ={
+    events: []
+  }
+
+  const [state, dispatch] = useReducer(reducer,initialState)
 
   return (
     //valueで渡せる　useContextで渡せる
