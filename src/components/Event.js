@@ -1,6 +1,7 @@
 import React ,{ useContext }from 'react'
-import { DELETE_EVENT } from '../actions' 
+import { ADD_OPERATION_LOG, DELETE_EVENT } from '../actions' 
 import  AppContext from '../contexts/AppContext'
+import { timeCurrentIso8601 } from '../utils'
 
 //event は state　の一つ一つ {id:1, title:'titel', body:'body'}
 const Event = ({ event }) =>{
@@ -9,7 +10,14 @@ const {dispatch } =useContext(AppContext)
   const handleClickDeleteButton = () =>{
     const result = window.confirm(`ID = ${id}のイベントを削除しても良いですか?`)
     //dispatchを読んでreducerに削除した事を伝えたい action に詰める
-    if(result)dispatch({ type:DELETE_EVENT, id})
+    if(result){
+      dispatch({ type:DELETE_EVENT, id})
+      dispatch({
+        type: ADD_OPERATION_LOG,
+        description: `ID = ${id} のイベントを削除しました`,
+        operatedAt: timeCurrentIso8601()
+      })
+    }
   }
   return(
     <tr>
